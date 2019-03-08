@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>房贷计算器</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<form>
+    <table border="1" cellpadding="5" cellspacing="0" width="100%">
+        <tr id="tabRow">
+            <td colspan="3"><span class="title">房贷计算器</span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>计算方式：</strong></td>
+            <td><input type="radio" name="unit" id="unit" class="init" checked>按面积算</td>
+            <td><span id="unitMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td width="15%"><strong>平米单价：</strong></td>
+            <td width="45%"><input type="text" name="unitprice" id="unitprice" class="init"></td>
+            <td width="40%"><span id="unitpriceMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>租&nbsp;&nbsp;&nbsp;金：</strong></td>
+            <td><input type="text" name="rent" id="rent" class="init"></td>
+            <td><span id="rentMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>物&nbsp;业&nbsp;费：</strong></td>
+            <td><input type="text" name="cost" id="cost" class="init"></td>
+            <td><span id="costMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>面&nbsp;&nbsp;&nbsp;积：</strong></td>
+            <td><input type="text" name="area" id="area" class="init"></td>
+            <td><span id="areaMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>首&nbsp;&nbsp;&nbsp;付：</strong></td>
+            <td><input type="text" name="first" id="first" class="init"></td>
+            <td><span id="firstMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>贷款利息：</strong></td>
+            <td><input type="text" name="interest" id="interest" class="init"></td>
+            <td><span id="interestMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td colspan="3">
+                <input type="button" value="计算" id="calBut">
+                <input type="reset" value="重置">
+            </td>
+        </tr>
+    </table>
+</form>
+<div style="height: 20px;clear: both"></div><!--添加一层为避免前后两层加紧，并清除浮动-->
+<div id="resultDiv">
+    <table>
+        <tr>
+            <td colspan="3"><span class="title">计算结果</span></td>
+        </tr>
+        <tr>
+            <td>首付金额：</td>
+            <td><span id="firstResult"></span></td>
+        </tr>
+        <tr>
+            <td>贷款总额：</td>
+            <td><span id="totalResult"></span></td>
+        </tr>
+        <tr>
+            <td>每月支付利息：</td>
+            <td><span id="monthResult"></span></td>
+        </tr>
+        <tr>
+            <td>每月租金：</td>
+            <td><span id="rentResult"></span></td>
+        </tr>
+        <tr>
+            <td>每月物业费：</td>
+            <td><span id="costResult"></span></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

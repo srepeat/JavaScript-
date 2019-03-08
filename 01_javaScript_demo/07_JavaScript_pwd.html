@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_JavaScript_pwd</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <!--<script type="application/javascript" src="js/demo01.js"></script>-->
+    <script>
+        function showSex() {
+            var sex = document.all("sex");
+            /*for(var x = 0;x<sex.length;x++){
+                alert(sex[x].value +"..."+sex[x].checked)
+            }*/
+            if(sex[0].checked){
+                alert(sex[0].value);
+            }
+            if(sex[1].checked){
+                alert(sex[1].value);
+            }
+        }
+    </script>
+    
+</head>
+<body>
+   <!-- <form action="05_JavaScript_btn.html" onsubmit="return vaildata()" method="post">
+        用户名称:<input type="text" id="user" name="user" class="init">
+        <span id="userMsg"></span><br>
+        输入密码:<input type="password" id="pwd" name="pwd" class="init">
+        <span id="pwdMsg"></span>
+        <br>
+        确认密码:<input type="password" id="conf" name="conf" class="init">
+        <span id="confMsg"></span>
+        <br>
+        <button type="submit" class="btn">登录</button>
+    </form>-->
+        性别:<input type="radio" name="sex" id="sex" value="男" checked>男&nbsp;
+            <input type="radio" name="sex" id="sax" value="女">女<br>
+            <button onclick="showSex()">显示</button>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+
+    //定义一个对象，构造参的方式去实现
+    //在调用的时候使用new 对象的方式调用当前对象的属性
+    var myName;
+    var myAge;
+    function Persion(name,age) {
+        /* this.name =name;
+         this.age = age;*/
+        myName =name;
+        myAge = age;
+        function getInfo() {
+            return "name:" +myName + ",age:"+myAge ;
+        }
+        return getInfo;
+    }
+    //prototype对原生操作的扩展
+    /* Persion.prototype.getInfo = function () {
+         return "name:" +this.name + "--->,age:"+this.age ;
+     }*/
+
+    var per =new Persion("李四",25);
+    alert(per());
+
+
+    // console.log(per.getInfo())
+    //alert(per.getInfo())
+
+    /*  per.name;
+     per.age;
+     console.log(per)
+    console.log(per.name +"==>"+ typeof per["name"]);
+     console.log(per.age +"==>"+ typeof per["age"]);*/
+
+    /**
+     * 定义一个方法，加减乘除
+     * 使用return关键访问结果集
+     * java中定义方法  public|private|protected(权限) static(静态的)int|void （返回值） 方法名（参数列表）
+     * 然而在JavaScript中就比较简单了,如下：
+     *                              ==>也可以在函数前面定义一个变量然后执行这个变量一样的也可以使用这个函数方法
+     *
+     */
+    /* var x =  function add(x,y) {
+             return x*y;
+     }*/
+
+    //自己调用自己
+    /*(function () {
+        alert("Hello!")
+    })();*/
+
+    //原生时间出发方法
+    /*window.onclick= function () {
+        var Btn = document.querySelector("button");
+        Btn.onclick = function () {
+            alert("点击事件")
+        }
+    }*/
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>02_javaScript_object</title>
+
+</head>
+<body>
+
+<button>按钮</button>
+
+</body>
+</html>

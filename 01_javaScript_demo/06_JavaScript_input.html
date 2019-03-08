@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>06_JavaScript_input</title>
+    <script>
+        function vaildataEmail() {
+            var emailElement = document.getElementById("email");
+            //alert(emailElement);
+            var msgElement = document.getElementById("emailMsg");
+           if(/^\w+@\w+\.\w+$/.test(emailElement.value)){
+               emailElement.className = "wrong";
+               msgElement.innerHTML = "<font color='green'>Email输入正确!</font>";
+                //alert("数据合法");
+               return true;
+           }else {
+               //alert("数据不合法");
+               emailElement.className = "right";
+               msgElement.innerHTML = "<font color='red'>Email输入错误!</font>";
+               return false;
+           }
+        }
+        //页面跳转拦截
+        function validate() {
+            return vaildataEmail();
+        }
+        
+    </script>
+</head>
+<body>
+    <form id="myform" action="05_JavaScript_btn.html" method="post" onsubmit=" return validate()">
+        请输入Email地址:<input type="text" name="email" id="email" value="" class="init"
+        onblur="vaildataEmail()"><span id="emailMsg"></span><br>
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>

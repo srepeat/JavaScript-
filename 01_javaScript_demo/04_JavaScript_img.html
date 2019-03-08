@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_JavaScript_img</title>
+
+    <style>
+        table tr td{
+            border: 1px solid black;
+        }
+    </style>
+    
+    <script>
+        function changeColor(obj,color) {
+            obj.bgColor = color;
+        }
+    </script>
+    
+</head>
+<body>
+    <table cellpadding="5" cellspacing="0" bgcolor="#505050">
+        <tr onmousemove="changeColor(this,'white')" onmouseout="changeColor(this,'#505050')">
+            <td>部门编号</td>
+            <td>部门名称</td>
+            <td>部门位置</td>
+        </tr>
+        <tr onmousemove="changeColor(this,'white')" onmouseout="changeColor(this,'#505050')">
+            <td>10</td>
+            <td>财务部</td>
+            <td>上海</td>
+        </tr>
+        <tr onmousemove="changeColor(this,'white')" onmouseout="changeColor(this,'#505050')">
+            <td>20</td>
+            <td>技术部</td>
+            <td>北京</td>
+        </tr>
+    </table>
+</body>
+</html>

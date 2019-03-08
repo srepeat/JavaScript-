@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+
+    <title>综合实战：表单验证（雇员管理操作）</title>
+    <script type="application/javascript" src="js/demo.js"></script>
+    <script type="application/javascript" src="js/libm.js"></script>
+    <script type="application/javascript" src="js/WdatePicker.js"></script>
+</head>
+<body>
+<form action="show.html" method="post" onsubmit="return vaildata()">
+    <table border="1" cellpadding="5" cellspacing="0" width="100%" bgcolor="#f2f2f2">
+        <tr id="tabRow">
+            <td colspan="3">
+                <span class="title">增加雇员信息</span>
+            </td>
+        </tr>
+        <tr id="tabRow">
+            <td width="15%"><strong>雇员编号：</strong></td>
+            <td width="45%"><input type="text" name="empno" id="empno" class="init" maxlength="4" size="4"></td>
+            <td width="40%"><span id="empnoMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>雇员姓名：</strong></td>
+            <td><input type="text" name="name" id="name" class="init"></td>
+            <td><span id="nameMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>雇员职位：</strong></td>
+            <td><input type="text" name="job" id="job" class="init"></td>
+            <td><span id="jobMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>雇员日期：</strong></td>
+            <td><input type="text" name="hiredate" id="hiredate" class="init"
+           onClick="WdatePicker()" readonly></td>
+            <td><span id="hiredateMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>基本工资：</strong></td>
+            <td><input type="text" name="sal" id="sal" class="init"></td>
+            <td><span id="salMsg"></span></td>
+        </tr>
+        <tr id="tabRow">
+            <td><strong>佣&nbsp;&nbsp;&nbsp;&nbsp;金：</strong></td>
+            <td><input type="text" name="comm" id="comm" class="init"></td>
+            <td><span id="commMsg"></span></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="submit" value="提交">
+                <input type="reset" value="重置">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

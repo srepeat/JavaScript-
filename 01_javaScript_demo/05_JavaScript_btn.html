@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05_JavaScript_btn</title>
+
+    <script type="text/html">
+        function handle() {
+            alert("事件触发")
+        }
+
+        //加载事件
+       /* window.onload = function () {
+            var  imgElement = document.getElementById("myimg");
+            imgElement.addEventListener('click',handle,false);
+        }*/
+
+        //var imgName = new Array("banner1.jpg","banner1.png","banner2.jpg","banner3.jpg");
+            var imgName = new Array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg");
+            var foot = 0;//操作的下标
+            //页面加载完毕后加载事件处理
+            window.onload = function () {
+                var pbut = document.getElementById("previousButton");
+                var nbut = document.getElementById("nextButton");
+                var img = document.getElementById("img");
+                nbut.addEventListener("click",function () {
+                    if(foot >=imgName.length){
+                        foot=0;//从0开始
+                    }
+                    img.src="images/"+imgName[foot ++];
+                },false);
+
+                pbut.addEventListener("click",function () {
+                    if (foot <=0){
+                        foot = imgName.length-1;//最后开始
+                    }
+                    img.src="images/"+imgName[foot --];
+                },false);
+            }
+    </script>
+
+</head>
+<body>
+<!--<img id="myimg" src="" height="50%">-->
+<div id="init">
+
+</div>
+
+<span id="info">
+    <img id="img" src="images/1.jpg" height="20%" width="100%">
+</span>
+<!--<div id="conDiv">
+    <button id="previousButton">上一张</button>
+    <button id="nextButton">下一张</button>
+</div>-->
+<script>
+    /**
+     * 练习setTimeout(当前函数,切换时间);
+     */
+   /* function setDate(){
+        var data = new Date();
+        var info = document.getElementById("init");
+        info.innerHTML = "<h1>当前时间"+data+"</h1>";
+
+        setTimeout(setDate,1000);
+    }
+    setDate();*/
+
+
+    //var imgName = new Array("banner1.jpg","banner1.png","banner2.jpg","banner3.jpg");
+    var imgName = new Array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg");
+    var foot = 0;//操作的下标
+
+    function setPic() {
+        var img = document.getElementById("img");
+        img.src= "images/"+imgName[foot ++];
+        //console.log(img.src);
+        if(foot >= imgName.length){
+            foot=0;//从0开始
+        }
+        setTimeout(setPic,1000);
+    }
+    setPic();
+
+</script>
+</body>
+</html>

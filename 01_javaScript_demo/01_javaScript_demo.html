@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_javaScript_demo</title>
+    <script type="application/javascript">
+
+        //定义变量的关键字var （变量名）;
+        // 如果没有赋值再打印输出为未定义的undefined,为此一般再判断的时候都是用一个!表明
+       /* var num;
+        console.log(typeof num);*/
+
+        //一般取反表明这个变量是未被定义得 ，所谓未被定义简单意义上就是没有赋值==>参数未被初始化
+        /*if (!num){
+            console.log("未被定义")
+        }else {
+            console.log("定义")
+        }*/
+
+        //切割字符串使用spite方法
+        // var str = "Hello World is page";
+        /*var str = "Hello,World,is,page";
+        var result = str.split(",");
+        //打印数据类型
+        console.log(typeof result);
+       for (var i = 0;i<result.length;i++){
+            console.log(result[i]);
+        }*/
+
+       /**
+        *  使用表格打印九九乘法表
+        *  可以在javaScript中使用HTML代码嵌入进来
+        *  但是唯一不同的就说维护麻烦
+        */
+
+       /*document.write("<table border='1px'>");
+       for (var i=1;i<=9;i++){
+           document.write("<tr>");
+           for (var j=1;j<=i;j++){
+               document.write("<td>"+i+ "*" + j + "=" +(i*j)+"</td>");
+           }
+           for (var j=1;j<=9-i;j++){
+               document.write("<td>&nbsp;</td>");
+           }
+           document.write("</tr>");
+       }
+
+       document.write("</table>")*/
+
+
+       /**
+        * 创建输入使用New关键字构建
+        * 其实数据和Java中的方式一样，但是唯一不同的是数组可以存放任意类型数据
+        * 其实他的类型为object对象
+        * 数组就和Java中的集合List Map一样可以去使用操作
+        *
+        */
+        var arr = new Array("C++","java","C#","Python");
+       /* arr[0] = "Hello";
+        arr[1] = 1;
+        arr[2] = true;*/
+        //使用下标取
+
+        //遍历数组
+        /*for (var i =0;i<arr.length;i++){
+            console.log(arr[i]+"===>"+typeof arr[i]);
+        }*/
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+
+
+</body>
+</html>

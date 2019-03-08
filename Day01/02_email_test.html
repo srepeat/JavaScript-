@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>02_emial_test</title>
+
+    <script>
+        //判断Email是否为空
+        function vaildataEmpty(elementName) {
+           var emailElement =  document.getElementById(elementName);
+           var msgElement = document.getElementById(elementName+"Msg");
+           //判断文本框元素是否为空
+            if(emailElement.value != ""){
+                emailElement.className = "right";
+                msgElement.innerHTML = "<font color='green'>信息正确！</font>";
+                return true;
+            }else{
+                emailElement.className = "wrong";
+                msgElement.innerHTML = "<font color='red'>信息不能为空！</font>";
+                return false;
+            }
+        }
+
+        /**
+         * 验证Email的格式是否正确
+          * @param elementName
+         * @returns {boolean}
+         */
+        function validataReapt(elementName) {
+            var emailElement =  document.getElementById(elementName);
+            var msgElement = document.getElementById(elementName+"Msg");
+            //判断文本框元素是否为空
+            if(/^\w+@\w+.\w+$/.test(emailElement.value)){
+                emailElement.className = "right";
+                msgElement.innerHTML = "<font color='green'>Email格式正确!</font>";
+                return true;
+            }else{
+                emailElement.className = "wrong";
+                msgElement.innerHTML = "<font color='red'>Email格式错误！</font>";
+                return false;
+            }
+        }
+
+        //调用函数传递id属性
+        function vaildataEmail() {
+            if(vaildataEmpty("email")){
+                return validataReapt("email");
+            }
+            return false;
+        }
+
+        //onsubmit拦截方法，如果为true提交表单，为false提交失败
+        function vaildata(){
+            return vaildataEmail();
+        }
+        //onload页面加载完毕，才执行DOM操作
+        window.onload = function(){
+            document.getElementById("email").addEventListener("blur",vaildataEmail,false);
+        }
+    </script>
+    
+</head>
+<body>
+    <form action="show.html" onsubmit="return vaildata()">
+        请输入Email信息:<input type="text" id="email" name="email" value="" class="init">
+        <span id="emailMsg"></span><br>
+        <button>提交</button>
+    </form>
+
+</body>
+</html>

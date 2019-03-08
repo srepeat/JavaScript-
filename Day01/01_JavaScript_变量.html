@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_JavaScript_变量</title>
+</head>
+<body>
+<!--数据类型 number string-->
+<script type="text/html">
+var name,sex,age;
+name = "李四";
+sex = "男";
+age = 18;
+//输出
+console.log(name+"===>"+sex+"===>"+age);
+</script>
+<!--boolean 返回true/false-->
+<script type="text/html">
+    /**
+     * boolean 判断是否有数据以及数据类型
+     * @type {boolean}
+     */
+    var bool = Boolean(0);
+    console.log(bool ); // false
+    var bool = Boolean(1);
+    console.log(bool ); // true
+    var bool = Boolean(-1);
+    console.log(bool ); // true
+    var bool = Boolean("hello");
+    console.log(bool); // true
+    var bool = Boolean("");
+    console.log(bool ); // false
+    var bool = Boolean(undefined);
+    console.log(bool ); // false
+    var bool = Boolean(null);
+    console.log(bool); // bool
+</script>
+
+<!--null 与undefined 比较类型和地址-->
+<script type="text/html">
+    var str1 = null;
+    var str2 = undefined;
+
+    console.log(str2 == str2);//比较两个所赋的值是否一样
+    console.log(str1 === str2); //比较两个变量的类型，地址
+
+</script>
+<script type="text/html">
+     var num;
+     console.log(String( typeof num));
+     console.log(String(num));
+ </script>
+<script type="text/html">
+    var str = 152;
+    var name = "张三";
+    console.log(str + name);
+    console.log(typeof (str + name));
+
+</script>
+
+<script>
+    var str1 = false;
+    var str2 = parseInt(str1);
+    console.log(str2);
+    var str3 = Number(str1);
+    console.log(str3);
+
+</script>
+
+</body>
+</html>
